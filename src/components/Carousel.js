@@ -8,17 +8,15 @@ function Carousel(){
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="image1.jpeg" class="d-block w-100" alt="..."/>
+        <img src="cake1.jpeg" class="d-block w-100" alt="..." style={{width:"100%",height:"400px"}}/>
       </div>
       <div class="carousel-item">
-        <img src="image4.jpg" class="d-block w-100" alt="..."/>
+        <img src="cake4.jpeg" class="d-block w-100" alt="..." style={{width:"100%",height:"400px"}}/>
       </div>
       <div class="carousel-item">
-        <img src="image3.jpeg" class="d-block w-100" alt="..."/>
+        <img src="cake3.jpeg" class="d-block w-100" alt="..." style={{width:"100%",height:"400px"}}/>
       </div>
-      <div class="carousel-item">
-        <img src="image3.jpeg" class="d-block w-100" alt="..."/>
-      </div>
+     
     </div>
     <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
