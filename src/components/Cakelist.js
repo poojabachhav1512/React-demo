@@ -4,8 +4,8 @@ import Cake from "./Cake"
 function Cakelist()
 {
     return(
-        <div class="container">
-        <div class="row">
+        // <div class="container" >
+        <div class="row" style={{padding:"8%"}}>
        { Cakes.map((each,index)=>{
 return(
   
@@ -14,7 +14,7 @@ return(
 )
        })}
 </div>
-</div>
+// </div>
        
     )
 }
