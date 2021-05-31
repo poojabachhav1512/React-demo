@@ -1,8 +1,7 @@
 import Navbar from "./components/Navbar"
 import Carousel from "./components/Carousel"
 import Signup from "./components/Signup"
-import Cake from "./components/Cake"
-import Data from "./components/Data"
+import Cakelist from "./components/Cakelist"
 
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
       <Navbar></Navbar>
       <Carousel></Carousel>
       <Signup></Signup>
-      <Cake data></Cake>
+      <Cakelist></Cakelist>
      
     </div>
   );
