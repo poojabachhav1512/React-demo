@@ -10,7 +10,7 @@ function App() {
   
   return (
     <div>
-      <Navbar></Navbar>
+      <Navbar ></Navbar>
       <Carousel></Carousel>
       <Signup></Signup>
       <Cakelist></Cakelist>

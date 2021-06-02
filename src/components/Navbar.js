@@ -1,3 +1,6 @@
+import React, { useState } from "react"; 
+
+
 function Navbar(){
   let name="ANGEL CAKE SHOP"
   let login="Login"
@@ -10,7 +13,11 @@ function Navbar(){
   let search=function(event){
     console.log("we have search", searchstring)
   }
-    return (
+
+  var[islogedin,setLogout]=useState(localStorage.islogedin)
+  // setLogout(<button class="btn btn-outline-success my-2 my-sm-0" onClick={setLogout} type="submit">Search</button>)
+    
+  return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
   {/* <a class="navbar-brand" href="#">Navbar</a> */}
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,10 +37,10 @@ function Navbar(){
       {searchstring}
       <button class="btn btn-outline-success my-2 my-sm-0" onClick={search} type="submit">Search</button>
     </form>
-    
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{login}</a>
-        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">{signup}</a>
-      
+    {! islogedin && <button class="btn btn-outline-success my-2 my-sm-0" onClick={login} type="submit">Login</button>}
+    {islogedin&&<button class="btn btn-outline-success my-2 my-sm-0" onClick={login} type="submit">Logout</button>}
+    {/* <button class="btn btn-outline-success my-2 my-sm-0" onClick={setLikes} type="submit">Likes</button> 
+    <button class="btn btn-outline-success my-2 my-sm-0" onClick={setDislikes} type="submit">Search</button>  */}
 
   </div>
 </nav>
