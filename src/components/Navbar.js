@@ -1,4 +1,5 @@
 import React, { useState } from "react"; 
+import {Link} from "react-router-dom";
 
 
 function Navbar(){
@@ -37,7 +38,7 @@ function Navbar(){
       {searchstring}
       <button class="btn btn-outline-success my-2 my-sm-0" onClick={search} type="submit">Search</button>
     </form>
-    {! islogedin && <button class="btn btn-outline-success my-2 my-sm-0" onClick={login} type="submit">Login</button>}
+    {! islogedin && <Link to="/signup"><button class="btn btn-outline-success my-2 my-sm-0" onClick={login} type="submit">Login</button></Link>}
     {islogedin&&<button class="btn btn-outline-success my-2 my-sm-0" onClick={login} type="submit">Logout</button>}
     {/* <button class="btn btn-outline-success my-2 my-sm-0" onClick={setLikes} type="submit">Likes</button> 
     <button class="btn btn-outline-success my-2 my-sm-0" onClick={setDislikes} type="submit">Search</button>  */}
