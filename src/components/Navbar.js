@@ -1,20 +1,31 @@
 import React, { useState } from "react"; 
-import {Link} from "react-router-dom";
+// import {Link} from "react-router-dom";
+import {Link, withRouter } from 'react-router-dom';
 
 
-function Navbar(){
+function Navbar(props){
   let name="ANGEL CAKE SHOP"
   let login="Login"
-  let signup="Sign Up"
-  let  searchstring=""
-  let getSeachText=function(event){
-    console.log(event.target.value)
-  }
 
-  let search=function(event){
-    console.log("we have search", searchstring)
-  }
 
+  let searchString = ""
+    let search = (event)=>{
+        event.preventDefault()
+      //   searchString = "searhc kar liya "
+      // console.log("we have to earch for " , searchString)
+      if(searchString){
+        // console.log("??????",searchString)
+        var url = "/search?q="+searchString
+        console.warn('url....',url)
+         props.history.push(url)
+        
+      }
+    }
+
+    let getSeachText = function(event){
+        searchString = event.target.value
+       console.log("event value" , event.target.value)
+    }
   var[islogedin,setLogout]=useState(localStorage.islogedin)
   // setLogout(<button class="btn btn-outline-success my-2 my-sm-0" onClick={setLogout} type="submit">Search</button>)
     
@@ -35,11 +46,10 @@ function Navbar(){
     </ul>
     <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" onChange={getSeachText} placeholder="Search" aria-label="Search"/>
-      {searchstring}
-      <button class="btn btn-outline-success my-2 my-sm-0" onClick={search} type="submit">Search</button>
+      {searchString}
+      <Link to="/search"><button onClick={search} className="btn btn-outline-success my-2 my-sm-0" type="button">Search</button></Link>
     </form>
     {! islogedin && <Link to="/signup"><button class="btn btn-outline-success my-2 my-sm-0" onClick={login} type="submit">Login</button></Link>}
-    {islogedin&&<button class="btn btn-outline-success my-2 my-sm-0" onClick={login} type="submit">Logout</button>}
     {/* <button class="btn btn-outline-success my-2 my-sm-0" onClick={setLikes} type="submit">Likes</button> 
     <button class="btn btn-outline-success my-2 my-sm-0" onClick={setDislikes} type="submit">Search</button>  */}
 
@@ -47,4 +57,4 @@ function Navbar(){
 </nav>
       );
 }
-export default Navbar;
+export default withRouter(Navbar);

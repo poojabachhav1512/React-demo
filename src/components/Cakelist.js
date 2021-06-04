@@ -16,7 +16,7 @@ var api="http://apibyashu.herokuapp.com/api/allcakes"
         url:api,
         
         }).then((response)=>{
-        console.log(response.data.data)
+        // console.log(response.data.data)
         setcakes(response.data.data)
         },
         (error)=>{
