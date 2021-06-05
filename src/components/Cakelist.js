@@ -9,7 +9,7 @@ import React, {useState, useEffect } from "react";
 function Cakelist()
 {
     var [Cakes, setcakes] = useState([]);
-var api="http://apibyashu.herokuapp.com/api/allcakes"
+var api="https://apibyashu.herokuapp.com/api/allcakes"
     useEffect(() => {
         axios({
             method:"GET",
